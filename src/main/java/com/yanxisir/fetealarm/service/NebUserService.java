@@ -17,7 +17,7 @@ public class NebUserService {
     @Autowired
     private INebApiUserService userService;
 
-    public String callVoteContract(String contractAddress, String function, String args) {
+    public String callContract(String contractAddress, String function, String args) {
         CallReq req = CallReq.builder()
                 .from("n1JE2mf65ryVScatTsnP8M9U5c1VSFmzvaZ")
                 .to(contractAddress)

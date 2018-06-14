@@ -26,6 +26,7 @@
         <spring.boot.version>1.5.2.RELEASE</spring.boot.version>
         <lombok.version>1.16.16</lombok.version>
         <javax.mail.version>1.5.0</javax.mail.version>
+        <swagger.version>2.8.0</swagger.version>
     </properties>
 
     <dependencies>
@@ -54,10 +55,22 @@
             <artifactId>javax.mail</artifactId>
             <version>${javax.mail.version}</version>
         </dependency>
+        <!--swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.yanxisir</groupId>
             <artifactId>neb-call</artifactId>
-            <version>0.0.7-SNAPSHOT</version>
+            <!--<version>0.0.7-SNAPSHOT</version>-->
+            <version>0.0.6</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,12 +34,12 @@ public class BirthdayController {
 
     @GetMapping("/all")
     public Object allRecord() {
-        return ApiResult.success(userService.callVoteContract(contractAddress,
+        return ApiResult.success(userService.callContract(contractAddress,
                 "getAll",
                 JSON.toJSONString(new String[]{})));
     }
 
-    @GetMapping("/send")
+    @PostMapping("/send")
     public Object testEmail(String email) {
         if (StringUtils.isEmpty(email)) {
             return ApiResult.fail();
