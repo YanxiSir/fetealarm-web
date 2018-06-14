@@ -15,7 +15,7 @@
         <logger name="ch.qos.logback" level="info"/>
         <logger name="org.springframework.web.client" level="debug"/>
 
-        <root level="debug">
+        <root level="info">
             <appender-ref ref="STDOUT"/>
         </root>
 
