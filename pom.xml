@@ -83,7 +83,8 @@
         <dependency>
             <groupId>com.yanxisir</groupId>
             <artifactId>neb-call</artifactId>
-            <version>0.0.7-SNAPSHOT</version>
+            <!--<version>0.0.7-SNAPSHOT</version>-->
+            <version>0.0.6</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
