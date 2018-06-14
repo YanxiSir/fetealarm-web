@@ -1,4 +1,4 @@
-package com.yanxisir.fetealarm;
+package com.yanxisir.fetealarm.service;
 
 import com.yanxisir.neb.bean.CallReq;
 import com.yanxisir.neb.bean.Contract;

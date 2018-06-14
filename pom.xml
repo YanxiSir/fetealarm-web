@@ -25,6 +25,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.boot.version>1.5.2.RELEASE</spring.boot.version>
         <lombok.version>1.16.16</lombok.version>
+        <javax.mail.version>1.5.0</javax.mail.version>
     </properties>
 
     <dependencies>
@@ -46,6 +47,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+        <!-- mail -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>${javax.mail.version}</version>
         </dependency>
         <dependency>
             <groupId>com.yanxisir</groupId>

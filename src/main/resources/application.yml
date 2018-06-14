@@ -1,2 +1,12 @@
 server:
   port: 8092
+
+### aliyun 邮件推送
+email:
+    host: smtpdm.aliyun.com
+    port: 80
+    username: support@yanxisir.com
+    password: YanxiSir123
+    from: support@yanxisir.com
+    contact: support@yanxisir.com
+    nick: support

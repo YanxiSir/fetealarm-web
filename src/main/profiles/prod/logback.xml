@@ -9,9 +9,9 @@
     </appender>
 
     <appender name="console_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/home/app/nebulasio/logs/user-center/console.log</file>
+        <file>/home/yanxi/workspace/logs/fetealarm/console.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/home/app/nebulasio/logs/user-center/console.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>/home/yanxi/workspace/logs/fetealarm/console.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>90</maxHistory>
         </rollingPolicy>
         <encoder>
