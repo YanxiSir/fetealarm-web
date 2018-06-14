@@ -1,7 +1,7 @@
 package com.yanxisir.fetealarm.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.google.gson.JsonObject;
+import com.alibaba.fastjson.JSONObject;
 import com.yanxisir.fetealarm.ApiResult;
 import com.yanxisir.fetealarm.service.EmailService;
 import com.yanxisir.fetealarm.service.FreeMarkerService;
@@ -44,8 +44,8 @@ public class BirthdayController {
         if (StringUtils.isEmpty(email)) {
             return ApiResult.fail();
         }
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("user", email);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("user", email);
         String html = freeMarkerService.html("birthday.ftl", jsonObject);
         return ApiResult.success(emailService.send("Just A Test Email", html, "support",
                 "support@yanxisir.com", new String[]{email}));
