@@ -20,8 +20,10 @@ import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 /**
  * @author YanxiSir
@@ -61,9 +63,10 @@ public class BirthdaySchedule {
             return;
         }
         log.info("所有数据：{}", JSON.toJSONString(entityList));
-        final Date now = LocalDate.now().toDate();
-        final Date oneMinuteAgo = LocalDateTime.now().plusMinutes(-1).toDate();
-        entityList.stream().filter(entity -> {
+        LocalDateTime localDate = LocalDateTime.now();
+        final Date now = localDate.toDate();
+        final Date oneMinuteAgo = localDate.plusMinutes(-1).toDate();
+        List<BirthdayAlarmEntity> filterList = entityList.stream().filter(entity -> {
             // 发送时间改为今年
             entity.setSendTime(DateUtils.setCurYear(entity.getSendTime()));
             Date sendDate = entity.getSendTime();
@@ -73,8 +76,21 @@ public class BirthdaySchedule {
                 return true;
             }
             return false;
-        }).forEach(entity -> executorService.execute(() -> asyncSendEmail(entity)));
-
+        }).collect(Collectors.toList());
+        if (CollectionUtils.isEmpty(filterList)) {
+            log.info("没有可以发送列表,任务结束");
+            return;
+        }
+        CountDownLatch latch = new CountDownLatch(filterList.size());
+        filterList.forEach(entity -> executorService.execute(() -> {
+            asyncSendEmail(entity);
+            latch.countDown();
+        }));
+        try {
+            latch.wait();
+        } catch (Exception e) {
+            log.error("CountDownLatch error", e);
+        }
         log.info("任务结束.");
 
     }

@@ -26,7 +26,7 @@
 </style>
 <body>
 <div class="container" id="cardDisplay" style="padding-top: 20px;">
-    <div class='col-md-6'> <div class='thumbnail' style='box-shadow:0 2px 20px #888888;border-radius:25px;background-image:url( ${imageUrl} );'>
+    <div class=''> <div class='' style='box-shadow:0 2px 20px #888888;border-radius:25px;background-image:url( ${imageUrl} );'>
         <div style='padding-left: 10px; padding-top: 15px;'><h3>To ${toName}</h3></div>
         <div class='card'>${content}</div>
         <div style='text-align: right; padding-bottom: 15px; padding-right: 20px;'>
