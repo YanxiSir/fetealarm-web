@@ -87,7 +87,7 @@ public class BirthdaySchedule {
             latch.countDown();
         }));
         try {
-            latch.wait();
+            latch.await();
         } catch (Exception e) {
             log.error("CountDownLatch error", e);
         }
