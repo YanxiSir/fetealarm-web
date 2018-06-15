@@ -130,6 +130,7 @@
                     <include>*.yml</include>
                     <include>*.xml</include>
                     <include>**/*.ftl</include>
+                    <include>**/*.jpg</include>
                 </includes>
             </resource>
             <resource>
