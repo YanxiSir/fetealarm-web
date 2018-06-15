@@ -80,8 +80,7 @@ public class BirthdaySchedule {
 
     }
 
-    @Async
-    void asyncSendEmail(BirthdayAlarmEntity entity) {
+    private void asyncSendEmail(BirthdayAlarmEntity entity) {
         log.info("=======开始发送邮件:{}=======", entity.getToEmail());
         ECardType type = ECardType.of(entity.getKind()) == null ? ECardType.CARD_0 : ECardType.of(entity.getKind());
         entity.setImageUrl(type.getImage());
